@@ -7,6 +7,8 @@
 nodenv local 12.8.0
 yarn global add @vue/cli-init
 vue init webpack task_app
+
+npm install vuex
 ```
 
 ## Build Setup

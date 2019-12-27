@@ -1,13 +1,22 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+  <div>
+    <h2>List of tasks</h2>
+    <ul>
+      <li v-for="task in tasks" v-bind:key="task.id">
+        <input type="checkbox" v-bind:checked="task.done">
+        {{ task.name }}
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
+  computed: {
+    tasks () {
+      return this.$store.state.tasks
+    }
+  }
 }
 </script>
 
