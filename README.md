@@ -2,6 +2,13 @@
 
 > A Vue.js project
 
+## Local Setup
+```
+nodenv local 12.8.0
+yarn global add @vue/cli-init
+vue init webpack task_app
+```
+
 ## Build Setup
 
 ``` bash
