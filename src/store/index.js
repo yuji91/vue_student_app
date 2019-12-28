@@ -9,35 +9,59 @@ const store = new Vuex.Store({
       {
         id: 1,
         name: 'Purchase milk',
+        labelIds: [1, 2],
         done: false
       },
       {
         id: 2,
         name: 'Purchase book about Vue.js',
+        labelIds: [1, 3],
         done: true
       }
     ],
+    labels: [
+      {
+        id: 1,
+        text: 'shopping'
+      },
+      {
+        id: 2,
+        text: 'groceries'
+      },
+      {
+        id: 3,
+        text: 'book'
+      }
+    ],
     nextTaskId: 3,
+    nextLabelId: 4
   },
   mutations: {
-    addTask (state, { name }) {
+    addTask (state, { name, labelIds }) {
       state.tasks.push({
         id: state.nextTaskId,
         name,
+        labelIds,
         done: false
       })
       state.nextTaskId++
     },
-    toggleTaskStatus (state, { id }){
+    toggleTaskStatus (state, { id }) {
       const filtered = state.tasks.filter(task => {
         return task.id === id
       })
-      filtered.forEach(task =>{
+      filtered.forEach(task => {
         task.done = !task.done
       })
+    },
+    addLabel (state, { text }) {
+      state.labels.push({
+        id: state.nextLabelId,
+        text
+      })
+      state.nextLabelId++
     }
   }
 })
 
 export default store
-
