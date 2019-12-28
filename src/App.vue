@@ -25,6 +25,9 @@
         {{ label.text }}
       </li>
     </ul>
+    <form v-on:submit.prevent="addLabel">
+      <input type="text" v-model="newLabelText" placeholder="new label">
+    </form>
   </div>
 </template>
 
