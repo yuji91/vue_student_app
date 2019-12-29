@@ -41,6 +41,9 @@
         Do not filter
       </li>
     </ul>
+    <h2>save and restore</h2>
+    <button type="button" v-on:click="save">save</button>
+    <button type="button" v-on:click="restore">restore</button>
   </div>
 </template>
 
@@ -92,6 +95,12 @@ export default {
       this.$store.commit('changeFilter', {
         filter: labelId
       })
+    },
+    save () {
+      this.$store.dispatch('save')
+    },
+    restore () {
+      this.$store.dispatch('restore')
     }
   }
 }
