@@ -2,23 +2,17 @@
 
 > A Vue.js project
 
-## Local Setup
-```
-nodenv local 12.8.0
-yarn global add @vue/cli-init
-vue init webpack task_app
-
-npm install vuex
-```
-
 ## Build Setup
 
 ``` bash
+# node version
+nodenv local 12.8.0
+
 # install dependencies
-npm install
+yarn install
 
 # serve with hot reload at localhost:8080
-npm run dev
+yarn dev
 
 # build for production with minification
 npm run build
